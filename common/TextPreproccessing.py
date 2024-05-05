@@ -14,4 +14,6 @@ class TextPreprocessing:
         tokens = self.mystem.lemmatize(punc_free)
         tokens = [token for token in tokens if token != " "]
         text = " ".join(tokens)
+        text = text.replace("\n", " ").replace("-", " ").split(' ')
+        text = ' '.join([word for word in text if word != ''])
         return text
